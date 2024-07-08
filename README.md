@@ -21,9 +21,10 @@
 2- Launch  ROS Master:
 - The ROS Master is the central point of the ROS system, responsible for managing communication between ROS nodes.
 - By launching roscore, you are starting the ROS Master, which allows other ROS nodes to register with it and exchange data and commands.
-```
-$ roscore
-```
+  
+ ```
+    $ roscore
+  ```
 
 3- limitations:
 - The ROS Master can only run as a single instance on a system at a time.
@@ -43,17 +44,19 @@ $ roscore
    > Ctrl + Alt + T
 
 2- Create the Workspace Directory: 
-```
-$ cd
-$ mkir catkin_ws
-```
+
+   ```
+    $ cd
+    $ mkir catkin_ws
+   ```
 
 3- Create The Source Folder: 
-```
-$ cd catkin_ws/
-$ mkdir src
-$ catkin_make
-```
+
+  ```
+    $ cd catkin_ws/
+    $ mkdir src
+    $ catkin_make
+  ```
 
 4- You should see the following output:
 
@@ -61,17 +64,37 @@ $ catkin_make
 
 
 5- To ensure the build was successful, run:
-```
-$ ls
-```
 
-<img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/60ca20fe-cce6-4b95-b0b8-61af067d8215" width="240" height="40">
+  ```
+    $ ls
+  ```
 
-***
+<img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/60ca20fe-cce6-4b95-b0b8-61af067d8215" width="240" height="35">
+
+6- Source Catkin Workspace: 
+
+ ```
+   $ cd devel/
+   $ source setup.bash 
+  ```
+
+
+7- Source Catkin Workspace in every session:
+
+ ```
+  $ gedit ~/.bashrc
+ ```
+
+- You should see the following output:
+      - if Not? _Copy_ and _Paste_ it then press _SAVE_
+  
+ <img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/d2765498-b70c-4cb2-b5c4-f1fdbdad3cd7" width="290" height="40">
+
+
+8- Finally, The Catkin workspace is now set up, and you can start developing your first ROS program.
 
 
 
-**
 
 
 ## 4.
