@@ -13,7 +13,7 @@
 
 ***
 
-## 2. Launch Your First ROS Master
+## 2. Launch Your First ROS Master:
 
 1. Open a **Terminal**: 
    > Ctrl + Alt + T
@@ -36,7 +36,7 @@
 
 
 
-## 3. Setting Up Your First ROS Program (Catkin Workplace)
+## 3. Setting Up Your First ROS Program: (Catkin Workplace)
 Catkin is the official build system used by the Robot Operating System (ROS). 
  - it empowers ROS developers to optimize their workflow by simplifying the process of building, testing, and deploying ROS-based projects. This streamlined approach makes it easier for developers to manage and share their work within the ROS community.
     
@@ -153,7 +153,13 @@ A ROS package is the basic unit of organization in the ROS ecosystem, containing
 
 ***
 
-## 5.
+
+
+## 5. Write ROS Node with Python:
+
+<mark>Node:<mark>
+- The fundamental building blocks of a ROS application. A node is an executable program that runs inside the robot application and performs a specific task.
+- Nodes communicate using a publish-subscribe messaging model. Nodes can publish messages to topics, and other nodes can subscribe to those topics to receive the messages.
 
 
 ***
@@ -208,4 +214,13 @@ A ROS package is the basic unit of organization in the ROS ecosystem, containing
 
 
 ## 13.
+
+***
+
+## **Useful Resources**
+
+- [Full Instructions](https://wiki.ros.org/Installation/Ubuntu) provided by the ROS organization.
+- YouTube playlist on ROS Noetic available [here](https://youtu.be/Qk4vLFhvfbI?si=vQ72YrGRS629p7wb).
+- Udemy step-by-step course: [ROS1 for Beginners](https://rbcknd.com/ros-for-beginners) 
+
 
