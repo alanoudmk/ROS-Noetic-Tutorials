@@ -155,7 +155,7 @@ A ROS package is the basic unit of organization in the ROS ecosystem, containing
 
 
 
-## 5. Writing a ROS Node with Python:
+## 5. Creating ROS Node with Python:
 
 <mark>Node:<mark>
 - The fundamental building blocks of a ROS application. A node is an executable program that runs inside the robot application and performs a specific task.
@@ -231,7 +231,7 @@ A ROS package is the basic unit of organization in the ROS ecosystem, containing
 
 
 
-## 6.
+## 6. Creating ROS Node with C++:
 
 
 
