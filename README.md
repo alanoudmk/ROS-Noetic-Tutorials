@@ -60,7 +60,7 @@ Catkin is the official build system used by the Robot Operating System (ROS).
 
 4. You should see the following output:
 
-<img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/326d80bf-42e4-4c63-8681-0063294c4aa9" width="290" height="60">
+  <img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/326d80bf-42e4-4c63-8681-0063294c4aa9" width="290" height="60">
 
 
 5. To ensure the build was successful, run:
@@ -69,7 +69,7 @@ Catkin is the official build system used by the Robot Operating System (ROS).
     $ ls
   ```
 
-<img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/60ca20fe-cce6-4b95-b0b8-61af067d8215" width="240" height="35">
+  <img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/60ca20fe-cce6-4b95-b0b8-61af067d8215" width="240" height="35">
 
 6. Source Catkin Workspace: 
 
@@ -89,7 +89,7 @@ Catkin is the official build system used by the Robot Operating System (ROS).
 - You should see the following output:
       - if Not? _Copy_ and _Paste_ it then press _SAVE_
   
- <img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/f73d8e13-4e1f-4e00-9fc5-ca572e72780f" width="290" height="60">
+   <img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/f73d8e13-4e1f-4e00-9fc5-ca572e72780f" width="290" height="60">
 
 
 8. Finally, The Catkin workspace is now set up, and you can start developing your first ROS program.
@@ -149,7 +149,7 @@ A ROS package is the basic unit of organization in the ROS ecosystem, containing
 ```
 - This file will contain the necessary instructions for building and compiling your ROS package.
   
- <img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/1eb3d8d0-dc31-4740-9238-79617e8a7c8d" width="290" height="120">
+   <img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/1eb3d8d0-dc31-4740-9238-79617e8a7c8d" width="290" height="120">
 
 ***
 
@@ -192,19 +192,24 @@ A ROS package is the basic unit of organization in the ROS ecosystem, containing
   if __name__ == '__main__':
     rospy.init_node('my_first_python_node')
     rospy.loginfo("This node has been started")
-    rospy.sleep(1)
-    rospy.loginfo("Exit now")
+    rate = rospy.Rate(10)
+    while not rospy.is_shutdown():
+    	rospy.loginfo("Hello")
+    	rate.sleep()
 ```
 
-- This script initializes a ROS node, logs two informational messages, and then pauses for 1 second before logging a final message and exiting.
+- This script initializes a ROS node, logs a message indicating that node has started, a loop that logs the message "Hello" at a rate of 10 Hz (10 times per second) until the node is shut down.
   - It tells the OS to use  Python 3 interpreter to execute the script.
   - imports the ROS Python (rospy) library.
   - rospy.init_node initializes a ROS node with the name "my_first_python_node".
   - rospy.loginfo() function is used to write messages to the ROS log, which can be viewed using the roslog command.
-  - rospy.sleep(1) pauses the execution of the node for 1 second.
+  - rospy.Rate(10)  creates a rospy.Rate object that will be used to control the loop rate. In this case, the rate is set to 10 Hz (10 iterations per second).
+  - while not rospy.is_shutdown() This starts a loop that will continue to run until the ROS node is shut down (e.g., by pressing _Ctrl+C_ in Terminal)
+  - rate.sleep(): This line pauses the execution of the node for the remaining time in the 0.1-second (1/10 Hz) loop iteration, ensuring that the loop runs at the desired 10 Hz rate.
 
 - cklic _SAVE_, Then _Exit_:
- <img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/f42f1a58-949d-4008-9a97-8dadfb4258ba" width="590" height="135">
+
+  <img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/4b2ea5e5-c30b-4cac-bfd1-6f6e4832fa1f" width="450" height="130">
 
 
 5. Open a new **Terminal** and run roscore: 
@@ -223,7 +228,7 @@ A ROS package is the basic unit of organization in the ROS ecosystem, containing
 
 - You should see the following output:
 
-<img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/76b4d127-d90d-4fe8-97ae-e3aa82e8420f" width="390" height="48">
+  <img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/9c18defe-6a5b-42dc-8a07-7f0b2e10af60" width="400" height="200">
 
 
 
