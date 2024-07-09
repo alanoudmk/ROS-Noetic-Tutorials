@@ -155,11 +155,56 @@ A ROS package is the basic unit of organization in the ROS ecosystem, containing
 
 
 
-## 5. Write ROS Node with Python:
+## 5. Writing a ROS Node with Python:
 
 <mark>Node:<mark>
 - The fundamental building blocks of a ROS application. A node is an executable program that runs inside the robot application and performs a specific task.
 - Nodes communicate using a publish-subscribe messaging model. Nodes can publish messages to topics, and other nodes can subscribe to those topics to receive the messages.
+
+1. Create a scripts file:
+```
+  $ cd catkin_ws/src/my_robot_tutorials/
+  $ ls
+  # CMakeLists.txt  include  package.xml  src
+```
+2. Create your first node in it:
+ ```
+  $ mkdir scripts
+  $ cd scripts/
+  $ ls
+  $ touch my_first_node.py
+```
+
+3. Make the node executable:
+```
+  $ chmod +x my_first_node.py
+```
+
+4. Edit the node:
+```
+  $ gedit my_first_node.py
+```
+
+- write:
+```
+  #!/usr/bin/env python3
+  import rospy
+  if __name__ == '__main__':
+    rospy.init_node('my_first_python_node')
+    rospy.loginfo("This node has been started")
+    rospy.sleep(1)
+    rospy.loginfo("Exit now")
+```
+
+- This script initializes a ROS node, logs two informational messages, and then pauses for 1 second before logging a final message and exiting.
+  - It tells the OS to use  Python 3 interpreter to execute the script.
+  - imports the ROS Python (rospy) library.
+  - rospy.init_node initializes a ROS node with the name "my_first_python_node".
+  - rospy.loginfo() function is used to write messages to the ROS log, which can be viewed using the roslog command.
+  - rospy.sleep(1) pauses the execution of the node for 1 second.
+
+- cklic _SAVE_, Then _Exit_:
+ <img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/f42f1a58-949d-4008-9a97-8dadfb4258ba" width="420" height="135">
 
 
 ***
