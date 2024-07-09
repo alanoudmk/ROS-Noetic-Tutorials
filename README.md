@@ -231,6 +231,12 @@ A ROS package is the basic unit of organization in the ROS ecosystem, containing
   <img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/9c18defe-6a5b-42dc-8a07-7f0b2e10af60" width="400" height="200">
 
 
+7. View all ROS nodes that are currently running in the ROS environment:
+```
+  $ rosnode list
+```
+
+   <img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/49b58aa2-b24b-4383-b7bf-de28df943789" width="220" height="50">
 
 ***
 
