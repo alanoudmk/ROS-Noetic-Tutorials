@@ -204,7 +204,27 @@ A ROS package is the basic unit of organization in the ROS ecosystem, containing
   - rospy.sleep(1) pauses the execution of the node for 1 second.
 
 - cklic _SAVE_, Then _Exit_:
- <img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/f42f1a58-949d-4008-9a97-8dadfb4258ba" width="420" height="135">
+ <img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/f42f1a58-949d-4008-9a97-8dadfb4258ba" width="590" height="135">
+
+
+5. Open a new **Terminal** and run roscore: 
+   > Ctrl + Alt + T
+
+```
+  $ roscore
+```
+
+6. Return to the first **Terminal**, write:
+
+```
+  $ cd ~/catkin_ws/src/my_robot_tutorials/scripts
+  $ python3 my_first_node.py 
+```
+
+- You should see the following output:
+
+<img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/76b4d127-d90d-4fe8-97ae-e3aa82e8420f" width="390" height="48">
+
 
 
 ***
