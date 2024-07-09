@@ -207,7 +207,7 @@ A ROS package is the basic unit of organization in the ROS ecosystem, containing
   - while not rospy.is_shutdown() This starts a loop that will continue to run until the ROS node is shut down (e.g., by pressing _Ctrl+C_ in Terminal)
   - rate.sleep(): This line pauses the execution of the node for the remaining time in the 0.1-second (1/10 Hz) loop iteration, ensuring that the loop runs at the desired 10 Hz rate.
 
-- cklic _SAVE_, Then _Exit_:
+- click _SAVE_, Then _Exit_:
 
   <img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/4b2ea5e5-c30b-4cac-bfd1-6f6e4832fa1f" width="450" height="130">
 
@@ -244,9 +244,80 @@ A ROS package is the basic unit of organization in the ROS ecosystem, containing
 
 ## 6. Creating ROS Node with C++:
 
+1. Go inside the Source folder:
+```
+  $ cd catkin_ws/src/my_robot_tutorials/src/
+```
 
+2. Create your C++ file:
+ ```
+  $ touch my_first_node.cpp
 
+```
 
+3. Edit the node:
+```
+  $ gedit my_first_node.cpp
+```
+- write:
+```
+  #include <ros/ros.h>
+  int main( int argc, char **argv){
+  	ros::init(argc, argv, "my_first_cpp_node");
+  	ros::NodeHandle nh;
+  	ROS_INFO("Node has been started");
+  	ros::Rate rate(10);
+	  while( ros::ok()){
+		  ROS_INFO("Hello");
+		  rate.sleep();
+	  }
+  }
+```
+
+- click _SAVE_, Then _Exit_:
+
+  <img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/1bf97d8d-290e-4f30-8553-2a1bcb7aa0c2" width="450" height="110">
+
+4. Make the node executable:
+```
+  $ cd ..
+  $ gedit CMakeLists.txt 
+```
+- write:
+```
+  add_executable(node_cpp src/my_first_node.cpp)
+  target_link_libraries(node_cpp ${catkin_LIBRARIES})
+```
+- click _SAVE_, Then _Exit_:
+<img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/b94a320f-727c-46ae-9cde-c11398d312dd" width="470" height="60">
+
+  
+5. Go to the Catkin ws_ directory:
+```
+  $ cd catkin_ws/
+  ~/catkin_ws$ catkin_make
+```
+
+6. Open a new **Terminal** and run roscore: 
+   > Ctrl + Alt + T
+
+```
+  $ roscore
+```
+
+7. Return to the first **Terminal**, start the node:
+
+```
+  $ cd devel/lib/my_robot_tutorials/
+  $ ./node_cpp
+ 
+```
+
+- You should see the following output:
+
+  <img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/9f3234a9-570d-42e6-b539-726322004ed5" width="380" height="100">
+
+  
 ***
 
 ## 7.
