@@ -320,14 +320,55 @@ A ROS package is the basic unit of organization in the ROS ecosystem, containing
   
 ***
 
-## 7.
+## 7. Debugging ROS Nodes with Command-Line Tools:
+Debug your Nodes with Command Line Tools:
 
+
+1.  Open a **Terminal** & Launch  ROS Master: 
+   > Ctrl + Alt + T
+
+ ```
+    $ roscore
+```
+2. Start a Node using _rosrun_:
+   - Open another **Terminal** and write:
+   - Press _Tab_ key on your keyboardto Twice to help you autocomplete the command.
+     
+```
+    $ rosrun my_robot_tutorials 
+   # my_first_node.py  node_cpp
+```
+
+3. Run the Node:
+```
+	$ rosrun my_robot_tutorials node_cpp 
+	# [ INFO] [1720627420.614726780]: Node has been started
+	# [ INFO] [1720627420.616617024]: Hello
+	# [ INFO] [1720627420.718970798]: Hello
+	# [ INFO] [1720627420.818393970]: Hello
+```
+
+4. Differentiate between:
+   - Executable Name
+     	- actual name of the compiled script that you run to start the ROS node, the name you use with the _rosrun_ command to launch the node.
+   - File Name
+     	- the source code file that contains the implementation of the ROS node, e.g.  my_first_node.py and node_cpp.cpp.
+   - Node Name
+     	- to identify the ROS node within the ROS system, typically defined in node's source code, using rospy.init_node() or nh.advertise() functions.
+
+5. Useful Command-Line Tools:
+   - $ _rosnode list_:
+   	- will show all nodes registerd in the graph.
+   - $ _rosnode info_
+     	- get info about one running node.
+   - $ _rosnode kill_
+     	- to kill a node or press _Ctrl + C_.
 
 ***
 
 
 
-## 8.
+## 8. & Visualize:
 
 
 
