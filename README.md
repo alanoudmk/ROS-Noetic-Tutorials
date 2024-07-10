@@ -320,7 +320,7 @@ A ROS package is the basic unit of organization in the ROS ecosystem, containing
   
 ***
 
-## 7. Debugging ROS Nodes with Command-Line Tools:
+## 7. Debugging Nodes with Command-Line Tools:
 Debug your Nodes with Command Line Tools:
 
 
@@ -368,14 +368,57 @@ Debug your Nodes with Command Line Tools:
 
 
 
-## 8. & Visualize:
+## 8. Visualize ROS Graph:
 
+1.  Open a **Terminal** & Launch  ROS Master: 
+   > Ctrl + Alt + T
+
+ ```
+    $ roscore
+```
+
+2. Open the ROS Graph Viewer:
+```
+	$ rosrun rqt_graph rqt_graph 
+```
+
+- remove Debug.
+- You can see that there's nothing yet, just _rosout_. 
+
+   <img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/3d055f0e-a6fe-42cd-9dba-1d30d545153b" width="360" height="190">
+
+3. Now Lets Start the Node You Built:
+   - Open a **Terminal** & run:
+```
+	$ rosrun my_robot_tutorials node_cpp
+```
+
+4. Reload the ROS Graph Viewer:
+   - remove Debug.
+   - You can see that there's only one node now.
+   
+    <img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/40a00c6c-3f96-41aa-ad6e-2e2ed38f2d8e" width="360" height="190">
+
+5. Start Another Node::
+   - Open a **Terminal** & run:
+```
+	$ rosrun my_robot_tutorials 
+	# my_first_node.py  node_cpp          
+	$ rosrun my_robot_tutorials my_first_node.py 
+```
+
+
+5. Reload the ROS Graph Viewer:
+   - You can see that there are now two nodes.
+   
+    <img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/c80fab81-6bea-419a-8f6d-c3974d2de2b4" width="360" height="190">
 
 
 ***
 
 
-## 9.
+## 9. Experiment on Nodes with Turtelsim:
+- [HERE](https://github.com/alanoudmk/ROS1-Turtlesim-Controller) the tutorials.
 
 
 
