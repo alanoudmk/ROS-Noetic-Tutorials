@@ -358,7 +358,7 @@ Debug your Nodes with Command Line Tools:
 
 5. Useful Command-Line Tools:
    - $ _rosnode list_:
-   	- will show all nodes registerd in the graph.
+     	- will show all nodes registerd in the graph.
    - $ _rosnode info_
      	- get info about one running node.
    - $ _rosnode kill_
@@ -424,14 +424,19 @@ Debug your Nodes with Command Line Tools:
 
 ***
 
-## 10.
+## 10. What is a ROS Topic?
 
+- Topics are a fundamental part of the ROS communication architecture, allowing for flexible information exchange between different nodes in a ROS-based system. They enable the building of modular and scalable robot applications by allowing nodes to be developed and integrated independently.
+  - Unidirectional data stream (publisher/subsciber).
+  - has a Message Type.
+  
 
 ***
 
 
 
-## 11.
+## 11. Create a ROS Publisher with Python:
+
 
 
 
@@ -446,7 +451,45 @@ Debug your Nodes with Command Line Tools:
 
 ## 13.
 
+
 ***
+
+
+## 14.
+
+
+***
+
+
+## 15.
+
+
+
+
+***
+
+
+## 16.
+
+
+***
+
+
+## 17.
+
+
+
+
+***
+
+
+## 18.
+
+
+***
+
+
+## 19.
 
 ## **Useful Resources**
 
