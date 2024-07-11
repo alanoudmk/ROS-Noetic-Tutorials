@@ -435,7 +435,7 @@ Debug your Nodes with Command Line Tools:
 
 
 
-## 11. Create a ROS Publisher with Python:
+## 11. Create ROS Publisher with Python:
 
 1. Go to the _scripts folder_:
 ```
@@ -503,7 +503,7 @@ Debug your Nodes with Command Line Tools:
 ***
 
 
-## 12. Create a ROS Subscriber with Python:
+## 12. Create ROS Subscriber with Python:
 
 
 1. Go to the _scripts folder_:
@@ -561,7 +561,22 @@ Debug your Nodes with Command Line Tools:
 <img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/3c52c764-abcc-4ed0-a30c-6705291985d4" width="510" height="210">
 
 
-     
+***
+
+
+## 13. Create ROS Publisher with C++:
+
+
+***
+
+
+## 14. Create ROS Subscriber with C++:
+
+
+***
+
+
+## 15. Topic Activity:
 
 
 
@@ -569,19 +584,13 @@ Debug your Nodes with Command Line Tools:
 ***
 
 
-## 13.
+## 16. What is a Service?
 
 
 ***
 
 
-## 14.
-
-
-***
-
-
-## 15.
+## 17. Create a Python Service Server:
 
 
 
@@ -589,27 +598,59 @@ Debug your Nodes with Command Line Tools:
 ***
 
 
-## 16.
+## 18. Create a Python Service Client:
 
 
 ***
 
 
-## 17.
+## 19. Create a C++ Service Server & Client:
+
+
+***
+
+
+## 20. 
+
+
+***
+
+
+## 21. 
+
+
+***
+
+
+## 22. 
+
+***
+
+
+## 23. 
+
+
+***
+
+
+## 24. 
+
+***
+
+
+## 25. 
+
+
+***
+
+
+## 26. 
 
 
 
 
 ***
 
-
-## 18.
-
-
-***
-
-
-## 19.
 
 ## **Useful Resources**
 
