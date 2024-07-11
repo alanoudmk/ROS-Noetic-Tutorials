@@ -454,24 +454,50 @@ Debug your Nodes with Command Line Tools:
 
 4. Edit the node file:
 ```
-#!/usr/bin/env python3
-import rospy 
-from std_msgs import String
-if __name__ == '__main__':
-
-	rospy.init_node('robot_news_radio_transmitter')
-	pub = rospy.publisher("/robot_news_radio", String, queue_size=10)
-	rate = rospy.Rate(2)
-	while not rospy.is_shutdown():
-		msg = String()
-		msg.data = "Hi, this is Tom from the Robot News Radio !"
-		pub.publish( msg )
-		rate.sleep()
-	rospy.loginfo("Node was Stopped")
+	#!/usr/bin/env python3
+	import rospy 
+	from std_msgs.msg import String
+	if __name__ == '__main__':
+		rospy.init_node('robot_news_radio_transmitter')
+		pub = rospy.Publisher("/robot_news_radio", String, queue_size=10)
+		rate = rospy.Rate(2)
+		while not rospy.is_shutdown():
+			msg = String()
+			msg.data = "Hi, this is Tom from the Robot News Radio !"
+			pub.publish( msg )
+			rate.sleep()
+		rospy.loginfo("Node was Stopped")
 ```
   - click _SAVE_, Then _Exit_:
     
-5. 
+5. Open a new **Terminal** and run roscore: 
+   > Ctrl + Alt + T
+
+```
+	$ roscore
+```
+
+6. launch the node:
+```
+	$ python3 robot_news_radio_transmitter.py 
+```
+     
+
+7.  Open a new **Terminal** and run:
+```
+	$ rostopic list 
+```
+
+   - This will list all the topics currently available in the ROS system
+
+     
+8. Listen to the topic by command line:
+```
+	$ rostopic echo /robot_news_radio 
+```
+
+
+
 ***
 
 
