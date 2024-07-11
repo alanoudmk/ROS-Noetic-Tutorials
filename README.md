@@ -437,9 +437,41 @@ Debug your Nodes with Command Line Tools:
 
 ## 11. Create a ROS Publisher with Python:
 
+1. Go to the _scripts folder_:
+```
+	$ cd catkin_ws/src/my_robot_tutorials/scripts/
+```
 
+2. Create a New Node:
+```
+	$ touch robot_news_radio_transmitter.py
+```
 
+3. make it executable:
+```
+	$ chmod +x robot_news_radio_transmitter.py 
+```
 
+4. Edit the node file:
+```
+#!/usr/bin/env python3
+import rospy 
+from std_msgs import String
+if __name__ == '__main__':
+
+	rospy.init_node('robot_news_radio_transmitter')
+	pub = rospy.publisher("/robot_news_radio", String, queue_size=10)
+	rate = rospy.Rate(2)
+	while not rospy.is_shutdown():
+		msg = String()
+		msg.data = "Hi, this is Tom from the Robot News Radio !"
+		pub.publish( msg )
+		rate.sleep()
+	rospy.loginfo("Node was Stopped")
+```
+  - click _SAVE_, Then _Exit_:
+    
+5. 
 ***
 
 
