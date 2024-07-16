@@ -647,14 +647,82 @@ Here are some useful ROS commands for debugging topics:
 
 
 # What is a ROS Service?
+A ROS Service is a way for ROS nodes to communicate with each other using a _Request-Response_ interaction model. Unlike ROS Topics, which use a _Publish-Subscribe_ model, ROS Services allow a node to send a request to another node and receive a response.
 
+- The key characteristics of a ROS Service are:
+	- Request-Response Model
+	- Blocking Calls
+	- Service Definition: defined using a ``.srv`` file.
+	- Senchronous
+   	- A Service Server can only exist once, but can have many clients
+   
+- Some common use cases for ROS services include:
+	- Requesting specific data or information from a node
+	- Triggering actions or behaviors in a node
+	- Configuring or modifying the state of a node
+	- Services provide a more direct and controlled communication mechanism compared to topics, making them useful for tasks that require a specific request-response interaction.
 
 ***
 
 
-##  Create a Python Service Server:
+##  15. Create a Python Service Server:
 
+1. Go to the _scripts folder_:
+```
+	$ cd catkin_ws/src/my_robot_tutorials/scripts/
+```
 
+2. Create a New Node:
+```
+	$ touch add_two_ints_server.py
+```
+
+3. Make it executable:
+```
+	$ chmod +x add_two_ints_server.py
+```
+
+4. Edit the node file:
+```
+	$ gedit add_two_ints_server.py
+```
+
+ -  Write the [code]()
+
+  - click _SAVE_, Then _Exit_:
+    
+5. Start the ROS Master in a new Terminal:
+   > Ctrl + Alt + T
+
+```
+	$ roscore
+```
+
+6. Launch the service server node:
+```
+	$ python3 add_two_ints_server.py 
+```
+     
+
+7.  Open a new **Terminal** and Check the available ROS services:
+```
+	$ rosservice list 
+```
+
+8. Call the service server from the command line:
+```
+	$ rosservice call /add_two_ints "a:5  b:5"
+```
+   - Click _Enter_
+   - You should see the output:
+```
+	# sum: 10
+```
+
+   - if you back to the terminal where you launched the server node, you should also see the log message:
+```
+	# Sum of 5 and 5 is 10
+```
 
 
 ***
