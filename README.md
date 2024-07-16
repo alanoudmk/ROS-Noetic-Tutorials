@@ -619,9 +619,28 @@ Debug your Nodes with Command Line Tools:
 ***
 
 
-## 14. Topic Activity:
+## 14. Debugging ROS Topics:
 
+<mark>Note:<mark>
 
+Before proceeding, ensure that the ROS Master is running by executing the following command: ``roscore``
+
+Here are some useful ROS commands for debugging topics:
+
+- Display all available ROS commands:
+```
+	rostopic -h
+```
+
+- List all active ROS topics:
+```
+	rostopic list
+```
+
+- Inspect a specific ROS topic:
+```
+	rostopic info /<name of node>
+```
 
 
 ***
