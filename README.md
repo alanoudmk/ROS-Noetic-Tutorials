@@ -728,7 +728,49 @@ A ROS Service is a way for ROS nodes to communicate with each other using a _Req
 ***
 
 
-##  Create a Python Service Client:
+##  16. Create a Python Service Client:
+
+1. Navigate to the _scripts folder_:
+```
+	$ cd catkin_ws/src/my_robot_tutorials/scripts/
+```
+
+2. Create a New Node:
+```
+	$ touch add_two_ints_client.py
+```
+
+3. Make it executable:
+```
+	$ chmod +x add_two_ints_client.py
+```
+
+4. Edit the node file:
+```
+	$ gedit add_two_ints_client.py
+```
+
+ -  Write the [code]()
+ 
+ - click _SAVE_, Then _Exit_:
+
+5. Start the ROS Master in a new Terminal:
+   > Ctrl + Alt + T
+
+```
+	$ roscore
+```
+
+6. Start the service server node:
+```
+	$ rosrun my_robot_tutorials add_two_ints_server.py
+```
+     
+7. Back to the previous Terminal and Run the client server:
+```
+	$ python3 add_two_ints_client.py 
+```
+
 
 
 ***
