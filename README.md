@@ -752,7 +752,7 @@ A ROS Service is a way for ROS nodes to communicate with each other using a _Req
 
  -  Write the [code]()
  
- - click _SAVE_, Then _Exit_:
+ - click _SAVE_, Then _Exit_.
 
 5. Start the ROS Master in a new Terminal:
    > Ctrl + Alt + T
@@ -776,13 +776,92 @@ A ROS Service is a way for ROS nodes to communicate with each other using a _Req
 ***
 
 
-## Create a C++ Service Server & Client:
+## 17. Create a C++ Service Server:
 
+1. Navigate to the _src_ folder:
+```
+  $ cd catkin_ws/src/my_robot_tutorials/src/
+```
+
+2. Create a New Node:
+ ```
+  $ touch  add_two_ints_server.cpp
+
+```
+
+3. Edit the node file:
+```
+  $ gedit add_two_ints_server.cpp
+```
+
+ -  Write the [code]()
+ 
+ - click _SAVE_, Then _Exit_
+
+   
+4. Make the node executable:
+```
+  $ cd ..
+  $ gedit CMakeLists.txt 
+```
+- write:
+```
+  add_executable(add_two_ints_server src/add_two_ints_server.cpp)
+  target_link_libraries(add_two_ints_server ${catkin_LIBRARIES})
+```
+- Then go to the _find_package_ and add _rospy_tutorials_:
+```
+	find_package( catkin REQUIRED COMPONENTS
+		roscpp
+		rospy
+		std_msgs
+		rospy_tutorials
+	)
+```
+
+-  click _SAVE_, Then _Exit_.
+-  You can also add it to the ``package.xml``.
+  
+  
+5. Go to the Catkin ws_ directory:
+```
+  $ cd catkin_ws/
+  ~/catkin_ws$ catkin_make
+```
+
+6. Open a new **Terminal** and run roscore: 
+   > Ctrl + Alt + T
+
+```
+  $ roscore
+```
+
+7. Return to the first **Terminal**, start the node:
+
+```
+  $ rosrun my_robot_tutorials add_two_ints_server
+```
+
+8. Open a new **Terminal** and run: 
+   > Ctrl + Alt + T
+
+```
+  $ rosservice list
+  $ rosservice call /add_two_ints "a:1   b:6"
+```
+
+   - Click _Enter_
+   - You should see the output:
+```
+	# sum: 7
+```
+   - Check the previous Terminal and see the log.
+     
 
 ***
 
 
-## 
+## 17. Create a C++ Service Client:
 
 
 ***
