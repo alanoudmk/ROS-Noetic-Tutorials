@@ -557,9 +557,7 @@ Debug your Nodes with Command Line Tools:
 	add_executable(robot_news_radio_transmitter src/robot_news_radio_transmitter.cpp)
 	target_link_libraries(robot_news_radio_transmitter ${catkin_LIBRARIES})
 ```
-- click _SAVE_, Then _Exit_:
-<img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/b94a320f-727c-46ae-9cde-c11398d312dd" width="470" height="60">
-
+- click _SAVE_, Then _Exit_.
   
 5. Go to the Catkin ws_ directory:
 ```
