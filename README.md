@@ -566,6 +566,57 @@ Debug your Nodes with Command Line Tools:
 
 ## 13. Create ROS Publisher with C++:
 
+1. Go to the _scripts folder_:
+```
+	$ cd catkin_ws/src/my_robot_tutorials/scripts/
+```
+
+2. Create a New Node:
+```
+	$ touch robot_news_radio_transmitter.cpp
+```
+
+3. Edit the node file:
+```
+	$ gedit robot_news_radio_transmitter.cpp
+
+	#inc
+	import rospy
+	from std_msgs.msg import String
+	def callback_receive_radio_data(msg):
+		rospy.loginfo("Message received: ")
+		rospy.loginfo(msg)
+	if __name__ == '__main__':
+		rospy.init_node('smartphone')
+		sub = rospy.Subscriber("/robot_news_radio", String, callback_receive_radio_data)
+		rospy.spin()
+```
+ - click _SAVE_, Then _Exit_:
+
+
+
+5. Open a new **Terminal** and run roscore: 
+   > Ctrl + Alt + T
+
+```
+	$ roscore
+```
+
+6. Launch the node:
+```
+	$ python3 smartphone.py  
+```
+     
+
+7.  Open a new **Terminal** and run the publisher node
+```
+	$  rosrun my_robot_tutorials robot_news_radio_transmitter.py 
+```
+
+   - From the _Subscriber_ terminal, you should see the data being published by the _Publisher_ node
+
+<img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/3c52c764-abcc-4ed0-a30c-6705291985d4" width="510" height="210">
+
 
 ***
 
