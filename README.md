@@ -861,7 +861,79 @@ A ROS Service is a way for ROS nodes to communicate with each other using a _Req
 ***
 
 
-## 17. Create a C++ Service Client:
+## 18. Create a C++ Service Client:
+1. Navigate to the _src_ folder:
+```
+  $ cd catkin_ws/src/my_robot_tutorials/src/
+```
+
+2. Create a New Node:
+ ```
+  $ touch  add_two_ints_client.cpp
+
+```
+
+3. Edit the node file:
+```
+  $ gedit  add_two_ints_client.cpp
+```
+
+ -  Write the [code]()
+ 
+ - click _SAVE_, Then _Exit_
+
+   
+4. Make the node executable:
+```
+  $ cd ..
+  $ gedit CMakeLists.txt 
+```
+- write:
+```
+  add_executable(add_two_ints_client src/add_two_ints_client.cpp)
+  target_link_libraries(add_two_ints_client ${catkin_LIBRARIES})
+```
+
+-  click _SAVE_, Then _Exit_.
+  
+5. Go to the Catkin ws_ directory:
+```
+  $ cd catkin_ws/
+  ~/catkin_ws$ catkin_make
+```
+
+6. Open a new **Terminal** and run roscore: 
+   > Ctrl + Alt + T
+
+```
+  $ roscore
+```
+
+7. Return to the first **Terminal**, start the Server Service node:
+
+```
+  $ rosrun my_robot_tutorials add_two_ints_server
+```
+
+8. Open a new **Terminal**, call Client: 
+   > Ctrl + Alt + T
+
+```
+  $ rosrun my_robot_tutorials add_two_ints_client
+```
+   - Click _Enter_
+   - You should see the output:
+```
+	# Returned sum is : 17
+```
+
+
+  - If ther Server Service not running:
+    - You will see the output:
+```
+	# Service Call FAILD
+```
+     
 
 
 ***
