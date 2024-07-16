@@ -35,8 +35,10 @@
 ***
 
 
+# Setting Up Your First ROS Program:
 
-## 3. Setting Up Your First ROS Program: (Catkin Workplace)
+***
+## 3. Create Catkin Workplace:
 Catkin is the official build system used by the Robot Operating System (ROS). 
  - it empowers ROS developers to optimize their workflow by simplifying the process of building, testing, and deploying ROS-based projects. This streamlined approach makes it easier for developers to manage and share their work within the ROS community.
     
@@ -404,7 +406,7 @@ Debug your Nodes with Command Line Tools:
 
 ***
 
-## 10. What is a ROS Topic?
+# What is a ROS Topic?
 
 - Topics are a fundamental part of the ROS communication architecture, allowing for flexible information exchange between different nodes in a ROS-based system. They enable the building of modular and scalable robot applications by allowing nodes to be developed and integrated independently.
   - Unidirectional data stream (publisher/subsciber).
@@ -415,7 +417,7 @@ Debug your Nodes with Command Line Tools:
 
 
 
-## 11. Create ROS Publisher with Python:
+## 10. Create ROS Publisher with Python:
 
 1. Go to the _scripts folder_:
 ```
@@ -472,7 +474,7 @@ Debug your Nodes with Command Line Tools:
 ***
 
 
-## 12. Create ROS Subscriber with Python:
+## 11. Create ROS Subscriber with Python:
 
 
 1. Go to the _scripts folder_:
@@ -525,7 +527,7 @@ Debug your Nodes with Command Line Tools:
 ***
 
 
-## 13. Create ROS Publisher with C++:
+## 12. Create ROS Publisher with C++:
 
 1. Go to the _src folder_:
 ```
@@ -575,7 +577,7 @@ Debug your Nodes with Command Line Tools:
 ***
 
 
-## 14. Create ROS Subscriber with C++:
+## 13. Create ROS Subscriber with C++:
 1. Go to the _src folder_:
 ```
 	$ cd catkin_ws/src/my_robot_tutorials/src/
@@ -617,7 +619,7 @@ Debug your Nodes with Command Line Tools:
 ***
 
 
-## 15. Topic Activity:
+## 14. Topic Activity:
 
 
 
@@ -625,13 +627,13 @@ Debug your Nodes with Command Line Tools:
 ***
 
 
-## 16. What is a Service?
+# What is a ROS Service?
 
 
 ***
 
 
-## 17. Create a Python Service Server:
+##  Create a Python Service Server:
 
 
 
@@ -639,53 +641,53 @@ Debug your Nodes with Command Line Tools:
 ***
 
 
-## 18. Create a Python Service Client:
+##  Create a Python Service Client:
 
 
 ***
 
 
-## 19. Create a C++ Service Server & Client:
+## Create a C++ Service Server & Client:
 
 
 ***
 
 
-## 20. 
+## 
 
 
 ***
 
 
-## 21. 
+## 
 
 
 ***
 
 
-## 22. 
+##
 
 ***
 
 
-## 23. 
-
-
-***
-
-
-## 24. 
-
-***
-
-
-## 25. 
+## 
 
 
 ***
 
 
-## 26. 
+## 
+
+***
+
+
+##
+
+
+***
+
+
+##  
 
 
 
