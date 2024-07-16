@@ -185,27 +185,7 @@ A ROS package is the basic unit of organization in the ROS ecosystem, containing
   $ gedit my_first_node.py
 ```
 
-- write:
-```
-  #!/usr/bin/env python3
-  import rospy
-  if __name__ == '__main__':
-    rospy.init_node('my_first_python_node')
-    rospy.loginfo("This node has been started")
-    rate = rospy.Rate(10)
-    while not rospy.is_shutdown():
-    	rospy.loginfo("Hello")
-    	rate.sleep()
-```
-
-- This script initializes a ROS node, logs a message indicating that node has started, a loop that logs the message "Hello" at a rate of 10 Hz (10 times per second) until the node is shut down.
-  - It tells the OS to use  Python 3 interpreter to execute the script.
-  - imports the ROS Python (rospy) library.
-  - rospy.init_node initializes a ROS node with the name "my_first_python_node".
-  - rospy.loginfo() function is used to write messages to the ROS log, which can be viewed using the roslog command.
-  - rospy.Rate(10)  creates a rospy.Rate object that will be used to control the loop rate. In this case, the rate is set to 10 Hz (10 iterations per second).
-  - while not rospy.is_shutdown() This starts a loop that will continue to run until the ROS node is shut down (e.g., by pressing _Ctrl+C_ in Terminal)
-  - rate.sleep(): This line pauses the execution of the node for the remaining time in the 0.1-second (1/10 Hz) loop iteration, ensuring that the loop runs at the desired 10 Hz rate.
+- Write the [code](https://github.com/alanoudmk/ROS-Noetic-Tutorials/blob/main/src/my_first_node.py.txt).
 
 - click _SAVE_, Then _Exit_:
 
