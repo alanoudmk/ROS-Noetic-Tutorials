@@ -527,9 +527,9 @@ Debug your Nodes with Command Line Tools:
 
 ## 13. Create ROS Publisher with C++:
 
-1. Go to the _scripts folder_:
+1. Go to the _src folder_:
 ```
-	$ cd catkin_ws/src/my_robot_tutorials/scripts/
+	$ cd catkin_ws/src/my_robot_tutorials/src/
 ```
 
 2. Create a New Node:
@@ -576,7 +576,43 @@ Debug your Nodes with Command Line Tools:
 
 
 ## 14. Create ROS Subscriber with C++:
+1. Go to the _src folder_:
+```
+	$ cd catkin_ws/src/my_robot_tutorials/src/
+```
 
+2. Create a New Node:
+```
+	$ touch smartphone.cpp
+```
+
+3.  Edit the node file:
+```
+	$ gedit smartphone.cpp
+```
+
+ -  Write the [code]()
+
+ - click _SAVE_, Then _Exit_:
+    
+4. Make the node executable:
+```
+	  $ cd ..
+  	$ gedit CMakeLists.txt 
+```
+- write:
+```
+  	  add_executable(smartphone_node src/smartphone_node.cpp)
+	  target_link_libraries(smartphone_node ${catkin_LIBRARIES})
+```
+- click _SAVE_, Then _Exit_:
+
+5.  Launch node:
+```
+	$ rosrun my_robot_tutorials smartphone_node 
+	$ rosrun my_robot_tutorials robot_news_radio_transmitter
+	$ rosnode list
+```
 
 ***
 
