@@ -185,7 +185,7 @@ A ROS package is the basic unit of organization in the ROS ecosystem, containing
   $ gedit my_first_node.py
 ```
 
-- Write the [code](https://github.com/alanoudmk/ROS-Noetic-Tutorials/blob/main/src/my_first_node.py.txt).
+- Write the [code](https://github.com/alanoudmk/ROS-Noetic-Tutorials/blob/main/catkin_ws/src/my_robot_tutorials/scripts/my_first_node.py).
 
 - click _SAVE_, Then _Exit_:
 
@@ -435,21 +435,10 @@ Debug your Nodes with Command Line Tools:
 4. Edit the node file:
 ```
 	$ gedit robot_news_radio_transmitter.py
-
-	#!/usr/bin/env python3
-	import rospy 
-	from std_msgs.msg import String
-	if __name__ == '__main__':
-		rospy.init_node('robot_news_radio_transmitter')
-		pub = rospy.Publisher("/robot_news_radio", String, queue_size=10)
-		rate = rospy.Rate(2)
-		while not rospy.is_shutdown():
-			msg = String()
-			msg.data = "Hi, this is Tom from the Robot News Radio !"
-			pub.publish( msg )
-			rate.sleep()
-		rospy.loginfo("Node was Stopped")
 ```
+
+ -  Write the [code](https://github.com/alanoudmk/ROS-Noetic-Tutorials/blob/main/catkin_ws/src/my_robot_tutorials/scripts/robot_news_radio_transmitter.py)
+
   - click _SAVE_, Then _Exit_:
     
 5. Open a new **Terminal** and run roscore: 
@@ -504,18 +493,10 @@ Debug your Nodes with Command Line Tools:
 4. Edit the node file:
 ```
 	$ gedit smartphone.py
-
-	#!/usr/bin/env python3
-	import rospy
-	from std_msgs.msg import String
-	def callback_receive_radio_data(msg):
-		rospy.loginfo("Message received: ")
-		rospy.loginfo(msg)
-	if __name__ == '__main__':
-		rospy.init_node('smartphone')
-		sub = rospy.Subscriber("/robot_news_radio", String, callback_receive_radio_data)
-		rospy.spin()
 ```
+
+ -  Write the [code](https://github.com/alanoudmk/ROS-Noetic-Tutorials/blob/main/catkin_ws/src/my_robot_tutorials/scripts/smartphone.py)
+
  - click _SAVE_, Then _Exit_:
     
 5. Open a new **Terminal** and run roscore: 
@@ -559,43 +540,38 @@ Debug your Nodes with Command Line Tools:
 3. Edit the node file:
 ```
 	$ gedit robot_news_radio_transmitter.cpp
-
-	#inc
-	import rospy
-	from std_msgs.msg import String
-	def callback_receive_radio_data(msg):
-		rospy.loginfo("Message received: ")
-		rospy.loginfo(msg)
-	if __name__ == '__main__':
-		rospy.init_node('smartphone')
-		sub = rospy.Subscriber("/robot_news_radio", String, callback_receive_radio_data)
-		rospy.spin()
 ```
+
+ -  Write the [code](https://github.com/alanoudmk/ROS-Noetic-Tutorials/blob/main/catkin_ws/src/my_robot_tutorials/scripts/robot_news_radio_transmitter.cpp).
+
  - click _SAVE_, Then _Exit_:
 
-
-
-5. Open a new **Terminal** and run roscore: 
-   > Ctrl + Alt + T
-
+4. Make the node executable:
 ```
-	$ roscore
+	$ cd ..
+	$ gedit CMakeLists.txt 
+```
+- write:
+  
+```
+	add_executable(robot_news_radio_transmitter src/robot_news_radio_transmitter.cpp)
+	target_link_libraries(robot_news_radio_transmitter ${catkin_LIBRARIES})
+```
+- click _SAVE_, Then _Exit_:
+<img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/b94a320f-727c-46ae-9cde-c11398d312dd" width="470" height="60">
+
+  
+5. Go to the Catkin ws_ directory:
+```
+	$ cd catkin_ws/
+ 	 ~/catkin_ws$ catkin_make
 ```
 
-6. Launch the node:
+6. Launch node:
 ```
-	$ python3 smartphone.py  
+	$ rosrun my_robot_tutorials robot_news_radio_transmitter
+	$ rostopic echo /robot_news_radio
 ```
-     
-
-7.  Open a new **Terminal** and run the publisher node
-```
-	$  rosrun my_robot_tutorials robot_news_radio_transmitter.py 
-```
-
-   - From the _Subscriber_ terminal, you should see the data being published by the _Publisher_ node
-
-<img src="https://github.com/alanoudmk/ROS-Noetic-Tutorials/assets/127528672/3c52c764-abcc-4ed0-a30c-6705291985d4" width="510" height="210">
 
 
 ***
