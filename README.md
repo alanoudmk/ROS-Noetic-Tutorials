@@ -939,8 +939,62 @@ A ROS Service is a way for ROS nodes to communicate with each other using a _Req
 ***
 
 
-## 
+## 19. Debugging Services:
 
+1. Open a new **Terminal** and run roscore: 
+   > Ctrl + Alt + T
+
+```
+  $ roscore
+```
+
+2. Open another Terminal and list the available ROS service commands:
+   > Ctrl + Alt + T
+
+```
+  $ rosservice -h
+```
+
+3. Run Service Server:
+```
+  $ rosrun my_robot_tutorials add_two_ints_server
+```
+  - Any C++ or Python will launch.
+
+ 
+4. Open another Terminal to interact with the running services:
+
+- List all running services:
+```
+  $ rosservice list
+```
+
+- Get information about a specific service:
+```
+  $ rosservice info /add_two_ints
+```
+
+5. Open another Terminal to directly call the service:
+
+- Dirctly call service from the terminal:
+
+```
+  $ rosservice call /add_two_ints "a: 6   b:6"
+```
+  - You will see the result:
+```
+  # sum : 12
+```
+  - In the previous terminal where the service server is running, you should see:
+```
+  # 6 + 6 = 12
+```
+
+6. To see the services associated with a specific node:
+```
+  $ rosnode list
+  $ rosnode info /add_two_ints_server
+```
 
 ***
 
